@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Weather | Aggregator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather in {{ city }}</h1>
+        <div class="weather-card">
+            <h2>{{ weather['weather'][0]['description'].title() }}</h2>
+            <p>Temperature: {{ weather['main']['temp'] }}°C</p>
+            <p>Humidity: {{ weather['main']['humidity'] }}%</p>
+            <p>Wind Speed: {{ weather['wind']['speed'] }} m/s</p>
+        </div>
+
+        <h2>Hourly Forecast</h2>
+        <div class="hourly-forecast">
+            {% for hour in hourly[:6] %}
+            <div class="hourly-card">
+                <span>{{ hour.dt | datetimeformat }}</span> -
+                <span>{{ hour.main.temp }}°C</span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <a href="/" class="button">Back</a>
+    </div>
+</body>
+</html>
+

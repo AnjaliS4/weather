@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather & News Aggregator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather & News Aggregator</h1>
+        <div class="weather-section">
+            <h2>Current Weather</h2>
+            <div class="weather-card">
+                <i class="fas fa-cloud-sun weather-icon"></i>
+                <p class="temperature">25°C</p>
+                <p class="weather-description">Partly Cloudy</p>
+            </div>
+        </div>
+        <div class="news-section">
+            <h2>Latest News</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <img src="https://source.unsplash.com/300x200/?news" alt="news image">
+                    <h3>News Headline 1</h3>
+                    <p>Brief description of the news article...</p>
+                </div>
+                <div class="news-card">
+                    <img src="https://source.unsplash.com/300x200/?technology" alt="news image">
+                    <h3>News Headline 2</h3>
+                    <p>Brief description of the news article...</p>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="{{ url_for('weather') }}" class="btn">Check Weather</a>
+            <a href="{{ url_for('news') }}" class="btn">Read News</a>
+        </div>
+    </div>
+</body>
+</html>
+
+

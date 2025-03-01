@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>News | Aggregator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Latest {{ category.title() }} News</h1>
+
+        {% for article in news %}
+        <div class="news-card">
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.description }}</p>
+            <a href="{{ article.url }}" target="_blank">Read More</a>
+        </div>
+        {% endfor %}
+
+        <a href="/" class="button">Back</a>
+    </div>
+</body>
+</html>
+

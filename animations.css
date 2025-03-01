@@ -1,0 +1,30 @@
+/* Floating clouds */
+@keyframes float {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(0); }
+  }
+  
+  .cloud {
+      position: absolute;
+      top: 10%;
+      left: 20%;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.7;
+  }
+  
+  /* Sparkle effect */
+  @keyframes sparkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  
+  .sparkle {
+      position: absolute;
+      background: #fff;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      animation: sparkle 2s ease-in-out infinite;
+  }
+  
